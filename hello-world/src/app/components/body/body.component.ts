@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {visit} from '@angular/compiler-cli/src/ngtsc/util/src/visitor';
 
 @Component({
   selector: 'app-body',
