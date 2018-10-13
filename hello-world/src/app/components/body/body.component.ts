@@ -9,6 +9,7 @@ import {visit} from '@angular/compiler-cli/src/ngtsc/util/src/visitor';
 export class BodyComponent {
   phrase: Phrase;
   visible: boolean;
+  list: string[] = ['1', '2', '3'];
 
   constructor() {
     this.visible = true;
