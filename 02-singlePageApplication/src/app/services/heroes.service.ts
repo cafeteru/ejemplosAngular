@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {forEach} from '@angular/router/src/utils/collection';
+import { Injectable } from '@angular/core';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class HeroesService {
@@ -91,6 +91,17 @@ export class HeroesService {
     }
   }
 
+  buscarHeroes(termino: string) {
+    const heroes: Heroe[] = [];
+    termino = termino.toLowerCase();
+    for (const hero of this.heroes) {
+      const name = hero.name.toLowerCase();
+      if (name.indexOf(termino) >= 0) {
+        heroes.push(hero);
+      }
+    }
+    return heroes;
+  }
 }
 
 export interface Heroe {
