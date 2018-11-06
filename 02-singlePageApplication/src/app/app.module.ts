@@ -9,20 +9,24 @@ import { HeroesService } from './services/heroes.service';
 
 // Componenetes
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NavComponent } from './components/shared/navbar/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { InfoHeroComponent } from './components/info-heroe/info-hero.component';
+import { SearchComponent } from './components/search/search.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    NavComponent,
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    InfoHeroComponent
+    InfoHeroComponent,
+    SearchComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

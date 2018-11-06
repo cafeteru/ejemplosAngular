@@ -1,15 +1,4 @@
 <h1>Heroes</h1>
 <section class="card-columns">
-  <section class="card animated fadeIn fast" *ngFor="let hero of heroes ">
-    <img class="card-img-top" [src]="hero.img" [alt]="hero.name">
-    <div class="card-body">
-      <h5 class="card-title">{{hero.name}}</h5>
-      <p class="card-text">{{hero.bio}}</p>
-      <p class="card-text">
-        <small class="text-muted">{{hero.houseComic}}</small>
-      </p>
-      <button type="button" class="btn btn-outline-primary btn-block" routerLink="/hero/{{hero.name}}">Mostrar más
-      </button>
-    </div>
-  </section>
+  <app-card (selectedHero)="showHero($event)" [hero]="hero" *ngFor="let hero of heroes "></app-card>
 </section>

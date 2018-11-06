@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { forEach } from '@angular/router/src/utils/collection';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class HeroesService {
 
-  private heroes: Heroe[] = [
+  private heroes: Hero[] = [
     {
       name: 'Aquaman',
       bio: 'El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, ' +
@@ -83,7 +82,7 @@ export class HeroesService {
     return this.heroes;
   }
 
-  getSpecificHeroe(name: string) {
+  getSpecificHero(name: string) {
     for (const hero of this.heroes) {
       if (hero.name === name) {
         return hero;
@@ -91,12 +90,12 @@ export class HeroesService {
     }
   }
 
-  buscarHeroes(termino: string) {
-    const heroes: Heroe[] = [];
-    termino = termino.toLowerCase();
+  searchHeroes(name: string) {
+    const heroes: Hero[] = [];
+    name = name.toLowerCase();
     for (const hero of this.heroes) {
-      const name = hero.name.toLowerCase();
-      if (name.indexOf(termino) >= 0) {
+      const nameElement = hero.name.toLowerCase();
+      if (name.indexOf(nameElement) >= 0) {
         heroes.push(hero);
       }
     }
@@ -104,7 +103,7 @@ export class HeroesService {
   }
 }
 
-export interface Heroe {
+export interface Hero {
   name: string;
   bio: string;
   img: string;
