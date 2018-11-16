@@ -1,0 +1,84 @@
+<main id="container">
+  <h1>Pipes</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Original Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{title}}</td>
+        <td>uppercase</td>
+        <td>{{ title | uppercase }}</td>
+      </tr>
+      <tr>
+        <td>{{title}}</td>
+        <td>lowercase</td>
+        <td>{{ title | lowercase }}</td>
+      </tr>
+      <tr>
+        <td>{{title}}</td>
+        <td>slice</td>
+        <td>{{ title | slice:0:2 }}</td>
+      </tr>
+      <tr>
+        <td>{{pi}}</td>
+        <td>number:'3.0-0'</td>
+        <td>{{ pi | number:'3.0-0' }}</td>
+      </tr>
+      <tr>
+        <td>{{pi}}</td>
+        <td>number:'1.0-2'</td>
+        <td>{{ pi | number:'1.0-2' }}</td>
+      </tr>
+      <tr>
+        <td>{{numberPercent}}</td>
+        <td>percent:</td>
+        <td>{{ numberPercent | percent }}</td>
+      </tr>
+      <tr>
+        <td>{{numberPercent}}</td>
+        <td>percent:'2.2-4'</td>
+        <td>{{ numberPercent | percent:'2.2-4' }}</td>
+      </tr>
+      <tr>
+        <td>{{money}}</td>
+        <td>currency, por defecto en dolares</td>
+        <td>{{ money | currency }}</td>
+      </tr>
+      <tr>
+        <td>{{money}}</td>
+        <td>currency:'EUR'</td>
+        <td>{{ money | currency:'EUR' }}</td>
+      </tr>
+      <tr>
+        <td>{{money}}</td>
+        <td>currency:'EUR':true:'4.0-0'</td>
+        <td>{{ money | currency:'EUR':true:'4.0-0' }}</td>
+      </tr>
+      <tr>
+        <td>{{promise}}</td>
+        <td>async</td>
+        <td>{{ promise | async }}</td>
+      </tr>
+      <tr>
+        <td>{{date}}</td>
+        <td>date</td>
+        <td>{{ date | date }}</td>
+      </tr>
+      <tr>
+        <td>{{capitalizedLet}}</td>
+        <td>capitalized, pipe creado manualmente</td>
+        <td>{{ capitalizedLet | capitalized }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Json</h4>
+  <pre>{{ heroe | json }}</pre>
+
+  <h4>Video</h4>
+  
+</main>
