@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  showHeroe() {
+  showHero() {
     this.selectedHero.emit(this.hero.name);
   }
 

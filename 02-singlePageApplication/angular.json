@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/singlePageApplication",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -26,11 +27,16 @@
               "src/styles.css",
               "src/assets/css/bootstrap.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -125,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "singlePageApplication"
+  "defaultProject": "singlePageApplication",
+  "cli": {
+    "analytics": "0757b2f9-fe90-4284-aa71-6d9b979ab02e"
+  }
 }
