@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/hello-world",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,11 +26,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -124,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "hello-world"
+  "defaultProject": "hello-world",
+  "cli": {
+    "analytics": "6969b6c5-c942-4424-8ae5-3878529a30c9"
+  }
 }
