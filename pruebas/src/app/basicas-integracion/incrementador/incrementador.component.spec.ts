@@ -62,6 +62,7 @@ describe('Pruebas del IncremendatorComponent', () => {
   it('Comprobar cambios en el progreso', () => {
     const botones: DebugElement[] =
       fixture.debugElement.queryAll(By.css('.btn-primary'))
+    expect(botones.length).toBe(2);
     botones[0].triggerEventHandler('click', null);
     fixture.detectChanges();
     fixture.whenStable().then(() => {
