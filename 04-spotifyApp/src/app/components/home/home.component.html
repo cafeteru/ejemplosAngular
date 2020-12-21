@@ -1,5 +1,5 @@
 <div class="card-columns">
-  <div *ngFor="let song of songs" class="card">
+  <div *ngFor="let song of songs$ | async" class="card">
     <img class="card-img-top" [src]="song.images[0].url" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{song.name}}</h5>

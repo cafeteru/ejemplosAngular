@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Observable, of} from 'rxjs';
 import {SpotifyService} from '../../services/spotify.service';
+import {map} from 'rxjs/operators';
+import {Item} from '../../models/SpotifyData';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +10,17 @@ import {SpotifyService} from '../../services/spotify.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  songs: any[];
+  songs$: Observable<Item[]> = of();
 
   constructor(
     private spotifyService: SpotifyService
   ) {
-    this.songs = [];
   }
 
   ngOnInit() {
-    this.spotifyService.getNewReleases().subscribe((data: any) => {
-      console.log(data);
-      this.songs = data.albums.items;
-    });
+    this.songs$ = this.spotifyService.getNewReleases().pipe(
+      map(x => x.albums.items)
+    );
   }
 
 }
