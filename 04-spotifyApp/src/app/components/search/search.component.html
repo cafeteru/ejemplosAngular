@@ -1,3 +1,10 @@
-<p>
-  search works!
-</p>
+<section class="row" id="search">
+    <div class="col">
+        <input #searchInput type="text" (keyup)="search(searchInput.value)" class="form-control"
+            placeholder="Buscar el artista">
+    </div>
+</section>
+
+<section class="card-columns m-5">
+    <app-card *ngFor="let song of artists$ | async" [song]="song"></app-card>
+</section>

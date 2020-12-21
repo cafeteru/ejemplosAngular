@@ -9,7 +9,8 @@ import {ArtistComponent} from './components/artist/artist.component';
 import {NavbarComponent} from './components/shared/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
-
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardComponent } from './components/shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import {CommonModule} from '@angular/common';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    CardComponent
   ],
   imports: [
     BrowserModule,
