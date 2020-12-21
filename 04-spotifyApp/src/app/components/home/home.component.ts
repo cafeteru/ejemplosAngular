@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {SpotifyService} from '../../services/spotify.service';
-import {map} from 'rxjs/operators';
-import {Item} from '../../models/SpotifyData';
+import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { SpotifyService } from '../../services/spotify.service';
+import { Item } from '../../models/SpotifyData';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.songs$ = this.spotifyService.getNewReleases().pipe(
-      map(x => x.albums.items)
-    );
+    this.songs$ = this.spotifyService.getNewReleases();
   }
 
 }
